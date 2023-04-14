@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "me.duncanruns.stateoutput.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "LevelLoadingScreenMixin",
+    "MinecraftClientMixin",
+    "TitleScreenMixin",
+    "WorldGenerationProgressLoggerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

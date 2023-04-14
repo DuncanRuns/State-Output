@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "state-output",
+  "version": "${version}",
+  "name": "State Output",
+  "description": "Replicates the world preview state output feature.",
+  "authors": [
+    "DuncanRuns",
+    "jojoe77777"
+  ],
+  "license": "MIT",
+  "icon": "assets/state-output/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.duncanruns.stateoutput.StateOutputMod"
+    ]
+  },
+  "mixins": [
+    "state-output.mixins.json"
+  ],
+  "breaks": {
+    "worldpreview": "*"
+  }
+}
