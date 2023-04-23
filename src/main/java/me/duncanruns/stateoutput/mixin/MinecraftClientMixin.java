@@ -22,7 +22,7 @@ public abstract class MinecraftClientMixin {
     public Screen currentScreen;
 
     @Inject(method = "disconnect(Lnet/minecraft/client/gui/screen/Screen;)V", at = @At("TAIL"))
-    private void worldpreview_outputWaitingState(Screen screen, CallbackInfo info) {
+    private void outputWaitingState(Screen screen, CallbackInfo info) {
         // We do this inject after this.player is set to null in the disconnect method.
         // This is because the inworld state output depends on the player being non-null,
         // so it makes more sense to set the state for exiting after the player becomes null.
@@ -33,7 +33,7 @@ public abstract class MinecraftClientMixin {
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
-    private void worldpreview_outputInWorldState(CallbackInfo info) {
+    private void outputInWorldState(CallbackInfo info) {
         // If there is no player, there is no world to be in
         if (this.player == null) return;
         if (this.currentScreen == null) {
