@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class TitleScreenMixin {
     // We inject into the first tick rather than the tail of init because the tail of init will still load even if Atum is resetting.
     @Inject(method = "tick", at = @At("HEAD"))
-    private void worldpreview_outputTitleState(CallbackInfo ci) {
+    private void outputTitleState(CallbackInfo ci) {
         StateOutputHelper.outputState("title");
     }
 }
